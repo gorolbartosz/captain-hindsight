@@ -20,9 +20,12 @@ func main() {
 	http.HandleFunc("/favicon.ico", httputils.DoHandleData("image/png", image.Logo))
 	http.HandleFunc("/manifest.json", httputils.DoHandleJSON(app.Manifest))
 	http.HandleFunc("/bindings", httputils.DoHandleJSON(apps.NewDataResponse(app.Bindings)))
-	http.HandleFunc("/ping", ping)
+	// http.HandleFunc("/ping", ping)
 
 	http.HandleFunc("/static/logo.png", httputils.DoHandleData("image/png", image.Logo))
+	http.HandleFunc("/static/list.png", httputils.DoHandleData("image/png", image.List))
+	http.HandleFunc("/static/show.png", httputils.DoHandleData("image/png", image.Show))
+	http.HandleFunc("/static/trigger.png", httputils.DoHandleData("image/png", image.Trigger))
 
 	http.HandleFunc("/list", handler.List)
 	http.HandleFunc("/show", handler.Show)
@@ -33,7 +36,7 @@ func main() {
 	log.Fatal(http.ListenAndServe(addr, handlers.LoggingHandler(os.Stdout, http.DefaultServeMux)))
 }
 
-func ping(w http.ResponseWriter, req *http.Request) {
-	w.WriteHeader(200)
-	fmt.Fprintln(w, "{}")
-}
+// func ping(w http.ResponseWriter, req *http.Request) {
+// 	w.WriteHeader(200)
+// 	fmt.Fprintln(w, "{}")
+// }

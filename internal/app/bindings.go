@@ -13,18 +13,23 @@ var Bindings = []apps.Binding{
 				Icon:        "logo.png",
 				Label:       "captain",
 				Description: "Captain Hindsight App",
-				Hint:        "[list,show,trigger]",
+				Hint:        "[command]",
 				Bindings: []apps.Binding{
 					{
 						Label: "list",
+						Icon:  "list.png",
 						Form:  &form.List,
 					},
 					{
 						Label: "show",
+						Icon:  "show.png",
+						Hint:  "[id]",
 						Form:  &form.Show,
 					},
 					{
 						Label: "trigger",
+						Icon:  "trigger.png",
+						Hint:  "[id]",
 						Form:  &form.Trigger,
 					},
 				},
