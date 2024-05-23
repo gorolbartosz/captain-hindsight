@@ -7,7 +7,7 @@ import (
 
 var Bindings = []apps.Binding{
 	{
-		Location: "/command",
+		Location: apps.LocationCommand,
 		Bindings: []apps.Binding{
 			{
 				Icon:        "logo.png",

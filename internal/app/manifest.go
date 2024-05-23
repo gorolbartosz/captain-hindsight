@@ -13,7 +13,6 @@ var Manifest = apps.Manifest{
 		apps.PermissionActAsUser,
 	},
 	RequestedLocations: []apps.Location{
-		apps.LocationChannelHeader,
 		apps.LocationCommand,
 	},
 	Deploy: apps.Deploy{
