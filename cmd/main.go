@@ -14,9 +14,29 @@ import (
 
 	"github.com/mattermost/mattermost-plugin-apps/apps"
 	"github.com/mattermost/mattermost-plugin-apps/utils/httputils"
+	"github.com/mattermost/mattermost-server/v6/model"
 )
 
 func main() {
+	///////////////////////////////////////
+	///////////////// BOT /////////////////
+	///////////////////////////////////////
+
+	client := model.NewAPIv4Client("http://127.0.0.1:8065")
+	client.AuthType = model.AccessTokenType
+	client.AuthToken = ""
+
+	_, _, err := client.CreatePost(&model.Post{
+		ChannelId: "rex",
+		Message:   "Hello!",
+	})
+	if err != nil {
+		fmt.Println(err)
+	}
+	///////////////////////////////////////
+	///////////////// APP /////////////////
+	///////////////////////////////////////
+
 	http.HandleFunc("/favicon.ico", httputils.DoHandleData("image/png", image.Logo))
 	http.HandleFunc("/manifest.json", httputils.DoHandleJSON(app.Manifest))
 	http.HandleFunc("/bindings", httputils.DoHandleJSON(apps.NewDataResponse(app.Bindings)))
