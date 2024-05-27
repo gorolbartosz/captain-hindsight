@@ -24,10 +24,10 @@ func main() {
 
 	client := model.NewAPIv4Client("http://127.0.0.1:8065")
 	client.AuthType = model.AccessTokenType
-	client.AuthToken = ""
+	client.AuthToken = "zgjycrhfojdezeeqrnp5n8u9mc"
 
 	_, _, err := client.CreatePost(&model.Post{
-		ChannelId: "rex",
+		ChannelId: "mrnym5kkkpdzigx7x5i9txtbfc",
 		Message:   "Hello!",
 	})
 	if err != nil {

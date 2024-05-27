@@ -10,9 +10,10 @@ var Manifest = apps.Manifest{
 	HomepageURL: "https://github.com/gorolbartosz/captain-hindsight",
 	RequestedPermissions: []apps.Permission{
 		apps.PermissionActAsBot,
+		apps.Per
 	},
 	RequestedLocations: []apps.Location{
-		apps.LocationCommand,
+		
 	},
 	Deploy: apps.Deploy{
 		HTTP: &apps.HTTP{

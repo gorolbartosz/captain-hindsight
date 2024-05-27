@@ -18,7 +18,7 @@ func List(w http.ResponseWriter, req *http.Request) {
 	appclient.AsBot(c.Context).DM(c.Context.ActingUser.Id, "Was geht ab?!")
 
 	_, err := appclient.AsBot(c.Context).CreatePost(&model.Post{
-		ChannelId: "rex",
+		ChannelId: "mrnym5kkkpdzigx7x5i9txtbfc",
 		Message:   "Was bleibt dran?!",
 	})
 	if err != nil {
